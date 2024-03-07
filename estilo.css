@@ -1,0 +1,90 @@
+*{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    box-sizing: border-box; /*conteudo e caixa dentro do tamanho q vc definiu*/
+}
+
+body{
+    height: 100vh;
+    border: 0px;
+    display: grid;
+    grid-template-rows: 120px 1fr 60px;/*conteudo conte 3 linhas, top 120, foter 60 o resto um fragmento*/
+    grid-template-columns: 1fr;
+    /*pra organizar o conteudos*/
+    grid-template-areas: 
+    "cabecalho"  
+    "principal"  
+     "rodape";
+
+
+}
+.cabecalho{
+    grid-area: cabecalho;
+    background-color: rgb(44, 175, 18);
+    color: black;
+    /**/
+    display: flex;
+    flex-direction: column;/*eixo principal seria a coluna*/
+    /*alinha ao final do eixo, seja colun ou row*/
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 10px;
+    z-index: 1;
+    /*dica de box sombra https://www.cssmatic.com/box-shadow*/
+    box-shadow: -1px 3px 5px 0px rgba(0,0,0,0.75);
+}
+
+/*ajustes de h1*/
+.cabecalho > h1{
+    margin: 0px;
+    font-weight: 400;
+    font-size: 2.8rem;
+}
+
+.cabecalho > h2{
+    margin: 0px;
+    font-weight: 200;
+    font-size: 1.6rem;
+}
+
+
+.principal{
+    grid-area: principal;
+    height: calc(100vh-180px);/*tudo da área menos cabecalho120px e rodape60px*/
+    background-color: rgb(195, 195, 243);
+    padding: 20px;
+}
+
+/*conteudo*/
+.conteudo{
+    position: relative;
+    height: 100%;
+    overflow-y: scroll;
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0px 0px 25px 0px rgba(0,0,0,0.2);
+}
+
+
+.rodape{
+    grid-area: rodape;
+    background-color: rgb(23, 73, 117);
+    display: flex;/*SO não muda nada*/
+    justify-content: flex-end;
+    align-items: center;
+    font-size: 1.5rem;
+    padding-right: 20px;
+    color: cadetblue;
+    /*fixar rodape */
+    position: sticky;
+    bottom: 0px;/*colado */
+}
+
+.modulos{
+    display: flex; /*coloca tudo na mesma linha*/
+    flex-wrap: wrap;
+    justify-content: space-around;/*organiza igualment as distancias*/
+}
+.modulo{
+    flex-basis: 32%;
+    background-color: aquamarine;
+}
